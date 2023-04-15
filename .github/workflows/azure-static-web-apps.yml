@@ -28,6 +28,7 @@ jobs:
           app_location: '/' # App source code path
           api_location: 'api' # Api source code path - optional
           output_location: 'dist' # Built app content directory - optional
+          environment_variables: '{"VUE_APP_OPENAI_API_KEY": "${{ secrets.VUE_APP_OPENAI_API_KEY }}", "VUE_APP_DEPLOYMENT_ID": "${{ secrets.VUE_APP_DEPLOYMENT_ID }}","VUE_APP_MODEL_ID": "${{ secrets.VUE_APP_MODEL_ID }}"}'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
