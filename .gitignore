@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-create.sh
+test.sh
 
 *-lock.json
 
