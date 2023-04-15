@@ -90,7 +90,7 @@
   </script>
   
   <style scoped>
-  @import "~github-markdown-css/github-markdown.css";
+  /* @import "~github-markdown-css/github-markdown.css"; */
 
 .header {
   background-color: #f5f5f5;
