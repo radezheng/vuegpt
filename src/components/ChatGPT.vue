@@ -1,6 +1,7 @@
 <template>
+    <div class="header">欢迎使用Azure OpenAI</div>
     <div class="chat-container">
-      <div class="header">欢迎使用Azure OpenAI</div>
+      
       <div class="chat-history" ref="chatHistory">
             <vue-showdown
                 v-for="(message, index) in messages"
@@ -92,6 +93,9 @@
   <style scoped>
   /* @import "~github-markdown-css/github-markdown.css"; */
 
+body {
+  margin: 0px;
+}
 .header {
   background-color: #f5f5f5;
   padding: 10px;
@@ -100,18 +104,10 @@
   color: #333;
 }
 
-.footer {
-  background-color: #f5f5f5;
-  padding: 10px;
-  text-align: center;
-  font-size: 12px;
-  color: #333;
-  position: absolute;
-  width: 90%;
-  top: 95%;
-}
+
 .chat-container {
   padding: 10px;
+  align-items: center;
 }
 
 .assistant{
@@ -139,10 +135,9 @@
 }
 
 .chat-history {
-  max-height: calc(100vh - 15rem);
+  max-height: calc(100vh - 20rem);
   padding: 1.5rem 0;
   overflow-y: scroll;
-  width: 95%;
 }
 
 pre {
