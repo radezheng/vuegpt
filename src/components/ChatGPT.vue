@@ -16,7 +16,7 @@
         <button type="submit">发送</button>
         <button  @click="clearMessage" >Clear</button>
       </form>
-      <div class="footer">Simple Client for chatGPT</div>
+      
     </div>
   </template>
   
