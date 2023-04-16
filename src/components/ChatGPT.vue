@@ -12,6 +12,7 @@
                 :class="message.role"
                 ></vue-showdown>
       </div>
+      <div class="loading-spinner" v-if="loading"></div>
       <form @submit.prevent="sendMessage" class="input-container">
         <textarea v-model="inputMessage"  @keydown.enter.prevent="sendMessage" placeholder="输入你的消息..."></textarea>
         <button type="submit">发送</button>
@@ -40,7 +41,8 @@
       return {
         inputMessage: "",
         messages: [],
-        contextMaxLength: 5
+        contextMaxLength: 5,
+        loading: false,
       };
     },
     methods: {
@@ -58,7 +60,7 @@
         }
       
         msgtosend.unshift(dataground);
-
+        this.loading = true;
         axios
             .post(url, {
               messages: this.messages,
@@ -75,11 +77,15 @@
             })
             .then(response => {
               this.messages.push({ role: "assistant", content: response.data.choices[0].message.content });
+              this.loading = false;               
             })
             .catch(error => {
               console.error(error);
+              this.loading = false; 
               if(error.response.data.error){
                 this.messages.unshift({ role: "assistant", content: error.response.data.error.message });
+              }else{
+                this.messages.push({role: "assistant", content: error.response})
               }
             });
   
@@ -92,6 +98,20 @@
   
   <style scoped>
   /* @import "~github-markdown-css/github-markdown.css"; */
+
+ .loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 body {
   margin: 0px;
@@ -135,7 +155,7 @@ body {
 }
 
 .chat-history {
-  max-height: calc(100vh - 20rem);
+  max-height: calc(100vh - 18rem);
   padding: 1.5rem 0;
   overflow-y: scroll;
 }
