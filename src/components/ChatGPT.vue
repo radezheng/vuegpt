@@ -1,5 +1,5 @@
 <template>
-    <div class="header">欢迎使用Azure OpenAI</div>
+    <div class="header">欢迎使用Azure OpenAI - GPT4</div>
     <div class="chat-container">
       
       <div class="chat-history" ref="chatHistory">
