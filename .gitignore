@@ -2,7 +2,7 @@
 node_modules
 /dist
 test.sh
-
+**/*/*copy*
 *-lock.json
 
 # local env files

@@ -25,7 +25,7 @@
   
   
   <script>
- import axios from "axios";
+//  import axios from "axios";
  import { VueShowdown } from 'vue-showdown';
 
   var apikey = process.env.VUE_APP_OPENAI_API_KEY;
@@ -51,47 +51,94 @@
             this.messages = [];
         },
 
-      sendMessage() {
-        if (this.inputMessage.trim()) {
-          this.messages.push({ role: "user", content: this.inputMessage });
-        let msgtosend = [];
-        for (let i = Math.max(0, this.messages.length - this.contextMaxLength); i < this.messages.length; i++) {
-          msgtosend.push(this.messages[i]);
+        sendMessage() {
+  if (this.inputMessage.trim()) {
+    this.messages.push({ role: "user", content: this.inputMessage });
+    let msgtosend = [];
+    for (let i = Math.max(0, this.messages.length - this.contextMaxLength); i < this.messages.length; i++) {
+      msgtosend.push(this.messages[i]);
+    }
+
+    msgtosend.unshift(dataground);
+
+    if (this.eventSource) {
+      this.eventSource.close();
+    }
+
+    this.loading = true;
+    this.streaming = false;
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("api-key", apikey);
+    xhr.responseType = "text";
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === XMLHttpRequest.LOADING) {
+        let res = xhr.responseText;
+        // break each lines of res to string
+        let lines = res.split("\n");
+        let newmsg = {};
+        //for each line, remove the first 5 characters
+        for (let i = 0; i < lines.length; i++) {
+          if(!lines[i].startsWith("data:"))
+            continue;
+
+          lines[i] = lines[i].slice(5);
+          
+          
+          let jline = JSON.parse(lines[i]);
+          jline = jline.choices[0];
+          if(jline.finish_reason == "stop")
+            break;
+          
+          if(jline.delta.role)
+            newmsg = {role: jline.delta.role, content:""}
+          
+          if(jline.delta.content)
+            newmsg.content += jline.delta.content;
+          
         }
-      
-        msgtosend.unshift(dataground);
-        this.loading = true;
-        axios
-            .post(url, {
-              messages: this.messages,
-              max_tokens: 2000,
-              n: 1,
-              stop: null,
-              temperature: 0.9,
-            },
-            {
-              headers: {
-                'Content-Type': 'application/json',
-                'api-key': `${apikey}`,
-              },
-            })
-            .then(response => {
-              this.messages.push({ role: "assistant", content: response.data.choices[0].message.content });
-              this.loading = false;               
-            })
-            .catch(error => {
-              console.error(error);
-              this.loading = false; 
-              if(error.response.data.error){
-                this.messages.unshift({ role: "assistant", content: error.response.data.error.message });
-              }else{
-                this.messages.push({role: "assistant", content: error.response})
-              }
+
+        //delete last message from messages
+        if(this.streaming)
+          this.messages.pop();
+        this.messages.push(newmsg);
+        this.streaming = true;
+        
+      } else if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          this.loading = false;
+          this.streaming = false;
+        } else {
+          console.error(xhr.statusText);
+          this.loading = false;
+          if (xhr.response.data.error) {
+            this.messages.unshift({
+              role: "assistant",
+              content: xhr.response.data.error.message,
             });
-  
-          this.inputMessage = "";
+          } else {
+            this.messages.push({ role: "assistant", content: xhr.response });
+          }
         }
-      },
+      }
+    };
+
+    xhr.send(
+      JSON.stringify({
+        messages: this.messages,
+        max_tokens: 2000,
+        n: 1,
+        stop: null,
+        temperature: 0.9,
+        stream: true,
+      })
+    );
+
+    this.inputMessage = "";
+  }
+},
+
     },
   };
   </script>
