@@ -1,0 +1,91 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        },
+        "sku": {
+            "type": "string",
+            "defaultValue": "FREE"
+        },
+        "repoUrl": {
+            "type": "string",
+            "defaultValue": "https://github.com/radezheng/vuegpt"
+        },
+        "openaiApiKey": {
+            "type": "string"
+        },
+        "deploymentId": {
+            "type": "string"
+        },
+        "modelId": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2021-01-01",
+            "name": "[parameters('appName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "reserved": false
+            },
+            "sku": {
+                "name": "[parameters('sku')]"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-01-01",
+            "name": "[parameters('appName')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms/', parameters('appName'))]"
+            ],
+            "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appName'))]",
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                            "value": "14"
+                        },
+                        {
+                            "name": "VUE_APP_OPENAI_API_KEY",
+                            "value": "[parameters('openaiApiKey')]"
+                        },
+                        {
+                            "name": "VUE_APP_DEPLOYMENT_ID",
+                            "value": "[parameters('deploymentId')]"
+                        },
+                        {
+                            "name": "VUE_APP_MODEL_ID",
+                            "value": "[parameters('modelId')]"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/sourcecontrols",
+            "apiVersion": "2021-01-01",
+            "name": "[concat(parameters('appName'), '/web')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites/', parameters('appName'))]"
+            ],
+            "properties": {
+                "repoUrl": "[parameters('repoUrl')]",
+                "branch": "master",
+                "isManualIntegration": true,
+                "deploymentRollbackEnabled": false,
+                "isMercurial": false
+            }
+        }
+    ]
+}
