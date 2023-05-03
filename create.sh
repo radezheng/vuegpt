@@ -1,6 +1,7 @@
-npm install @azure/ai-text-analytics axios
-npm install -g @vue/cli
-npm install axios --save
+docker build -t vuegpt:basic.stream .
 
-
-gh secret set YOUR_SECRET_NAME -b"your_secret_value" --repo=username/reponame
+docker run -p 8080:8080 \
+  -e VUE_APP_OPENAI_API_KEY=your_openai_api_key \
+  -e VUE_APP_DEPLOYMENT_ID=your_deployment_id \
+  -e VUE_APP_MODEL_ID=your_model_id \
+  vuegpt:basic.stream

@@ -3,89 +3,94 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "appName": {
-      "type": "string"
-    },
-    "location": {
       "type": "string",
-      "defaultValue": "eastasia"
-    },
-    "sku": {
-      "type": "string",
-      "defaultValue": "B1",
-      "allowedValues": [
-        "F1",
-        "B1",
-        "S1"
-      ]
-    },
-    "vueAppOpenAIApiKey": {
-      "type": "string"
-    },
-    "vueAppDeploymentId": {
-      "type": "string"
-    },
-    "vueAppModelId": {
-      "type": "string"
+      "metadata": {
+        "description": "The name of the web app that you wish to create."
+      }
     }
   },
   "variables": {
-    "appServicePlanName": "[concat(parameters('appName'), 'ServicePlan')]"
+    "appServicePlanName": "[concat('plan', parameters('appName'))]",
+    "dockerImage": "radezheng/vuegpt:basic.stream",
+    "VUE_APP_OPENAI_API_KEY": "your-api-key",
+    "VUE_APP_DEPLOYMENT_ID": "your-deployment-id",
+    "VUE_APP_MODEL_ID": "your-model-id"
   },
   "resources": [
     {
       "type": "Microsoft.Web/serverfarms",
-      "apiVersion": "2021-02-01",
+      "apiVersion": "2016-09-01",
       "name": "[variables('appServicePlanName')]",
-      "location": "[parameters('location')]",
+      "location": "[resourceGroup().location]",
       "sku": {
-        "name": "[parameters('sku')]"
+        "name": "B1",
+        "tier": "Standard"
       },
       "properties": {
-        "reserved": true
+        "name": "[variables('appServicePlanName')]",
+        "workerSizeId": "1"
       }
     },
     {
       "type": "Microsoft.Web/sites",
-      "apiVersion": "2021-02-01",
+      "apiVersion": "2016-08-01",
       "name": "[parameters('appName')]",
-      "location": "[parameters('location')]",
+      "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       ],
       "properties": {
+        "name": "[parameters('appName')]",
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
         "siteConfig": {
           "appSettings": [
             {
-              "name": "WEBSITE_NODE_DEFAULT_VERSION",
-              "value": "18"
+              "name": "DOCKER_ENABLE_CI",
+              "value": "true"
+            },
+            {
+              "name": "DOCKER_REGISTRY_SERVER_URL",
+              "value": "https://index.docker.io"
+            },
+            {
+              "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+              "value": ""
+            },
+            {
+              "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+              "value": ""
+            },
+            {
+              "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+              "value": "true"
+            },
+            {
+              "name": "WEBSITES_PORT",
+              "value": "80"
             },
             {
               "name": "VUE_APP_OPENAI_API_KEY",
-              "value": "[parameters('vueAppOpenAIApiKey')]"
+              "value": "[variables('VUE_APP_OPENAI_API_KEY')]"
             },
             {
               "name": "VUE_APP_DEPLOYMENT_ID",
-              "value": "[parameters('vueAppDeploymentId')]"
+              "value": "[variables('VUE_APP_DEPLOYMENT_ID')]"
             },
             {
               "name": "VUE_APP_MODEL_ID",
-              "value": "[parameters('vueAppModelId')]"
+              "value": "[variables('VUE_APP_MODEL_ID')]"
             }
           ],
-          "linuxFxVersion": "NODE|18",
-          "repositorySiteName": "https://github.com/radezheng/vuegpt",
-          "scmType": "GitHub",
-          "use32BitWorkerProcess": false,
-          "webSocketsEnabled": true
+          "alwaysOn": true,
+          "linuxFxVersion": "[concat('DOCKER|', variables('dockerImage'))]"
         }
       }
     }
   ],
   "outputs": {
-    "appUrl": {
+    "webAppUrl": {
       "type": "string",
-      "value": "[concat('https://', parameters('appName'), '.azurewebsites.net')]"
+      "value": "[concat('http://', parameters('appName'), '.azurewebsites.net')]"
     }
   }
 }
