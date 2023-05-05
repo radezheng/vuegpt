@@ -31,6 +31,7 @@ if ($continue -ieq "yes" -or $continue -ieq "y") {
    exit
 }
 
+$webAppName = Read-Host -Prompt "输入 Web App 的名字(需全球唯一)"
 # Set default location and resource group
 $location = "eastasia"
 $resourceGroupName = "rgOpenAIChat"
@@ -64,7 +65,7 @@ az acr login --name $acrName
 docker push $dockerTagName
 
 # Create Azure Web App
-$webAppName = Read-Host -Prompt "输入 Web App 的名字(需全球唯一)"
+
 $planName = $resourceGroupName + "Plan"
 Write-Host "创建 Web App..."
 az appservice plan create --name $planName --sku B1 --location $location --resource-group $resourceGroupName --is-linux
