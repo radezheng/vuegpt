@@ -2,9 +2,9 @@ Write-Host "请先准备好下面条件："
 Write-Host "1. 一个 Azure 订阅"
 Write-Host "2. Docker Desktop for Windows"
 Write-Host "3. Azure CLI"
+Write-Host "4. 请按env.example创建.env文件，并填入正确的值"
 #按任意键继续
-$continue = Read-Host -Prompt "继续吗？(yes/no)"
-#如果 $useExistingAcr 等于 "yes" 或 "y"，则继续
+$continue = Read-Host -Prompt "请确认已完成，然后再继续。(yes/no)"
 
 
 if ($continue -ieq "yes" -or $continue -ieq "y") {
