@@ -1,0 +1,9 @@
+写一个dockerfile, 将现有vue.js 3项目打包成容器，tag为vuegpt:basic.stream
+- 堆栈node, version 18
+- set enviroment value for: VUE_APP_OPENAI_API_KEY, VUE_APP_DEPLOYMENT_ID and VUE_APP_MODEL_ID
+
+
+
+写个arm template, 将现有vue.js 3的docker image radezheng/vuegpt:basic.stream 一键部署到azure web app, 运行需要带三个环境变量 VUE_APP_OPENAI_API_KEY, VUE_APP_DEPLOYMENT_ID and VUE_APP_MODEL_ID
+
+

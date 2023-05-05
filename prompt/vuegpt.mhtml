@@ -1,0 +1,283 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://purple-ground-0d1b27f00.3.azurestaticapps.net/
+Subject: vuegpt
+Date: Wed, 19 Apr 2023 09:44:06 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--fHiG4Ng3vNEBDZsRsErYzY5XjnP5fHMEorpOAPw7LI----"
+
+
+------MultipartBoundary--fHiG4Ng3vNEBDZsRsErYzY5XjnP5fHMEorpOAPw7LI----
+Content-Type: text/html
+Content-ID: <frame-CA57FE93729866D3FCBEEACAE3E1589B@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://purple-ground-0d1b27f00.3.azurestaticapps.net/
+
+<!DOCTYPE html><html lang=3D""><head><meta http-equiv=3D"Content-Type" cont=
+ent=3D"text/html; charset=3DUTF-8"><meta http-equiv=3D"X-UA-Compatible" con=
+tent=3D"IE=3Dedge"><meta name=3D"viewport" content=3D"width=3Ddevice-width,=
+initial-scale=3D1"><link rel=3D"icon" href=3D"https://purple-ground-0d1b27f=
+00.3.azurestaticapps.net/favicon.ico"><title>vuegpt</title><link href=3D"ht=
+tps://purple-ground-0d1b27f00.3.azurestaticapps.net/css/app.6f77c90e.css" r=
+el=3D"stylesheet"></head><body><div id=3D"app" data-v-app=3D""><div data-v-=
+55add57a=3D"" class=3D"header">=E6=AC=A2=E8=BF=8E=E4=BD=BF=E7=94=A8Azure Op=
+enAI</div><div data-v-55add57a=3D"" class=3D"chat-container"><div data-v-55=
+add57a=3D"" class=3D"chat-history"><div data-v-55add57a=3D"" extension=3D"t=
+able,footnote" class=3D"user"><p><strong>user</strong>: =E7=94=A8vue.js=E5=
+=86=99=E4=B8=80=E4=B8=AA=E4=B8=8Echatgpt=E8=81=8A=E5=A4=A9=E7=9A=84=E7=BB=
+=84=E4=BB=B6=EF=BC=8C=E5=8C=85=E6=8B=AC=E6=B6=88=E6=81=AF=E8=BE=93=E5=85=A5=
+=E5=8F=91=E9=80=81=EF=BC=8C=E5=92=8C=E8=81=8A=E5=A4=A9=E8=AE=B0=E5=BD=95=E6=
+=98=BE=E7=A4=BA=E3=80=82=E8=A6=81=E6=B1=82=E5=A6=82=E4=B8=8B</p>
+<ul>
+<li>apikey=E5=9C=A8=E7=8E=AF=E5=A2=83=E5=8F=98=E9=87=8F VUE_APP_OPENAI_API_=
+KEY=EF=BC=8C endpoint=E5=9C=A8VUE_APP_URL</li>
+<li>=E5=85=A8=E5=B1=8F=E6=98=BE=E7=A4=BA=EF=BC=8C=E8=87=AA=E9=80=82=E5=BA=
+=94=E5=B1=8F=E5=B9=95</li>
+<li>=E8=BE=93=E5=85=A5=E6=A1=86=E5=9C=A8=E6=9C=80=E4=B8=8B=E9=9D=A2=EF=BC=
+=8C=E6=94=AF=E6=8C=81=E5=A4=9A=E8=A1=8C=E8=BE=93=E5=85=A5=EF=BC=8C=E5=AE=BD=
+=E5=BA=A6100%=EF=BC=8C =E6=8C=89=E5=9B=9E=E8=BD=A6=E5=8D=B3=E5=8F=91=E9=80=
+=81</li>
+<li>=E8=81=8A=E5=A4=A9=E8=AE=B0=E5=BD=95=E6=98=BE=E7=A4=BA=E5=9C=A8=E4=B8=
+=8A=E9=9D=A2=EF=BC=8C=E6=94=AF=E6=8C=81=E6=BB=9A=E5=8A=A8=E6=98=BE=E7=A4=BA=
+</li>
+<li>=E8=81=8A=E5=A4=A9=E8=AE=B0=E5=BD=95=E9=9C=80=E8=A6=81=E6=98=BE=E7=A4=
+=BA=E5=AE=8C=E6=95=B4=EF=BC=8C=E6=94=AF=E6=8C=81=E4=B8=8D=E5=90=8C=E7=9A=84=
+=E6=A0=BC=E5=BC=8F=EF=BC=8C=E5=A6=82=E5=9B=9E=E8=BD=A6=E6=8D=A2=E8=A1=8C=EF=
+=BC=8C=E5=88=86=E7=82=B9=E5=88=97=E5=87=BA=EF=BC=8C=E4=BB=A3=E7=A0=81=E4=BB=
+=A5markdown=E6=98=BE=E7=A4=BA=E7=AD=89</li>
+<li>=E5=8F=91=E9=80=81=E6=B6=88=E6=81=AF=E4=BF=9D=E6=8C=81=E4=B8=8A=E6=96=
+=875=E6=9D=A1=E6=B6=88=E6=81=AF=E8=AE=B0=E5=BD=95=E3=80=82=E6=9C=80=E5=A4=
+=A7token=E4=B8=BA2000</li>
+</ul>
+<p>=E8=AF=B7=E6=B1=82=E7=A4=BA=E4=BE=8B:<br>
+curl $OPENAI_API_BASE/openai/deployments/gpt-35-turbo/chat/completions?api-=
+version=3D2023-03-15-preview \<br>
+  -H "Content-Type: application/json" \<br>
+  -H "api-key: $OPENAI_API_KEY" \<br>
+  -d '{"messages":[{"role": "system", "content": "You are a helpful assista=
+nt."},{"role": "user", "content": "Does Azure OpenAI support customer manag=
+ed keys?"},{"role": "assistant", "content": "Yes, customer managed keys are=
+ supported by Azure OpenAI."},{"role": "user", "content": "Do other Azure C=
+ognitive Services support this too?"}]}'</p>
+<p>=E5=93=8D=E5=BA=94=E7=A4=BA=E4=BE=8B:<br>
+{"id":"chatcmpl-6v7mkQj980V1yBec6ETrKPRqFjNw9",<br>
+"object":"chat.completion","created":1679072642,<br>
+"model":"gpt-35-turbo",<br>
+"usage":{"prompt_tokens":58,<br>
+"completion_tokens":68,<br>
+"total_tokens":126},<br>
+"choices":[{"message":{"role":"assistant",<br>
+"content":"Yes, other Azure Cognitive Services also support customer manage=
+d keys. Azure Cognitive Services offer multiple options for customers to ma=
+nage keys, such as using Azure Key Vault, customer-managed keys in Azure Ke=
+y Vault or customer-managed keys through Azure Storage service. This helps =
+customers ensure that their data is secure and access to their services is =
+controlled."},"finish_reason":"stop","index":0}]}</p></div><div data-v-55ad=
+d57a=3D"" extension=3D"table,footnote" class=3D"assistant"><p><strong>assis=
+tant</strong>: =E9=A6=96=E5=85=88=EF=BC=8C=E6=88=91=E4=BB=AC=E9=9C=80=E8=A6=
+=81=E5=AE=89=E8=A3=85=E5=B9=B6=E8=AE=BE=E7=BD=AEVue.js=E9=A1=B9=E7=9B=AE=EF=
+=BC=8C=E5=AE=89=E8=A3=85axios=E5=BA=93=E6=9D=A5=E5=A4=84=E7=90=86HTTP=E8=AF=
+=B7=E6=B1=82=EF=BC=8C=E5=B9=B6=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA=E5=85=A8=
+=E6=96=B0=E7=9A=84=E7=BB=84=E4=BB=B6=E3=80=82=E4=BB=A5=E4=B8=8B=E6=98=AF=E4=
+=BD=BF=E7=94=A8Vue CLI=E5=88=9B=E5=BB=BA=E6=96=B0=E9=A1=B9=E7=9B=AE=E7=9A=
+=84=E5=9F=BA=E6=9C=AC=E6=AD=A5=E9=AA=A4=EF=BC=9A</p>
+<ol>
+<li>=E5=AE=89=E8=A3=85Vue CLI:</li>
+</ol>
+<pre><code>npm install -g @vue/cli</code></pre>
+<ol start=3D"2">
+<li>=E5=88=9B=E5=BB=BA=E4=B8=80=E4=B8=AA=E5=90=8D=E4=B8=BA"chat-gpt"=E7=9A=
+=84=E6=96=B0=E9=A1=B9=E7=9B=AE:</li>
+</ol>
+<pre><code>vue create chat-gpt</code></pre>
+<ol start=3D"3">
+<li>=E8=BF=9B=E5=85=A5=E6=96=B0=E9=A1=B9=E7=9B=AE=E6=96=87=E4=BB=B6=E5=A4=
+=B9=EF=BC=9A</li>
+</ol>
+<pre><code>cd chat-gpt</code></pre>
+<ol start=3D"4">
+<li>=E5=AE=89=E8=A3=85axios=E5=BA=93=EF=BC=9A</li>
+</ol>
+<pre><code>npm install axios</code></pre>
+<ol start=3D"5">
+<li>=E5=9C=A8<code>src</code>=E6=96=87=E4=BB=B6=E5=A4=B9=E4=B8=8B=E5=88=9B=
+=E5=BB=BA=E4=B8=80=E4=B8=AA=E6=96=B0=E7=9A=84=E7=BB=84=E4=BB=B6=E6=96=87=E4=
+=BB=B6=E5=90=8D=E4=B8=BA<code>ChatGPT.vue</code>=E3=80=82</li>
+</ol>
+<p>=E6=8E=A5=E4=B8=8B=E6=9D=A5=EF=BC=8C=E6=88=91=E4=BB=AC=E5=B0=86=E5=9C=A8=
+<code>ChatGPT.vue</code>=E6=96=87=E4=BB=B6=E4=B8=AD=E7=BC=96=E5=86=99=E4=BB=
+=A3=E7=A0=81=E3=80=82=E5=9C=A8<code>&lt;script&gt;</code>=E9=83=A8=E5=88=86=
+=EF=BC=8C=E8=AF=B7=E6=8C=89=E7=85=A7=E4=BB=A5=E4=B8=8B=E7=A4=BA=E4=BE=8B=E8=
+=BF=9B=E8=A1=8C=E8=AE=BE=E7=BD=AE=EF=BC=9A</p>
+<pre><code class=3D"javascript language-javascript">&lt;template&gt;
+  &lt;div id=3D"app" class=3D"container"&gt;
+    &lt;div class=3D"chat-container"&gt;
+      &lt;div class=3D"message-list" ref=3D"messageList"&gt;
+        &lt;div v-for=3D"(message, index) in messages" :key=3D"index" class=
+=3D"message" :class=3D"message.role"&gt;
+          &lt;span&gt;{{ message.content }}&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=3D"input-container"&gt;
+      &lt;textarea v-model=3D"inputValue" @keypress.enter=3D"sendMessage" p=
+laceholder=3D"Type your message here"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import axios from 'axios'
+
+export default {
+  data() {
+    return {
+      messages: [{ role: 'system', content: 'You are a helpful assistant.' =
+}],
+      inputValue: ''
+    }
+  },
+  methods: {
+    async sendMessage() {
+      if (this.inputValue.trim() =3D=3D=3D '') return
+
+      this.messages.push({ role: 'user', content: this.inputValue.trim() })
+      this.scrollToBottom()
+
+      const response =3D await axios.post(
+        process.env.VUE_APP_URL + '/openai/deployments/gpt-35-turbo/chat/co=
+mpletions?api-version=3D2023-03-15-preview',
+        { messages: this.messages.slice(-5) },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'api-key': process.env.VUE_APP_OPENAI_API_KEY
+          }
+        }
+      )
+
+      this.messages.push({ role: 'assistant', content: response.data.choice=
+s[0].message.content })
+      this.scrollToBottom()
+      this.inputValue =3D ''
+    },
+    scrollToBottom() {
+      this.$nextTick(() =3D&gt; {
+        this.$refs.messageList.scrollTop =3D this.$refs.messageList.scrollH=
+eight
+      })
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.message-list {
+  flex: 1;
+  padding: 10px;
+  overflow: auto;
+}
+.message {
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+.message.user {
+  text-align: right;
+}
+.input-container {
+  display: flex;
+  padding: 10px;
+}
+textarea {
+  width: 100%;
+  resize: none;
+}
+&lt;/style&gt;</code></pre>
+<p>=E7=8E=B0=E5=9C=A8=EF=BC=8C=E5=9C=A8<code>src</code>=E6=96=87=E4=BB=B6=
+=E5=A4=B9=E4=B8=8B=E7=9A=84<code>main.js</code>=E6=96=87=E4=BB=B6=E4=B8=AD=
+=EF=BC=8C=E5=BC=95=E5=85=A5=E5=B9=B6=E4=BD=BF=E7=94=A8=E6=96=B0=E5=88=9B=E5=
+=BB=BA=E7=9A=84<code>ChatGPT</code>=E7=BB=84=E4=BB=B6=E5=B9=B6=E6=9B=BF=E6=
+=8D=A2=E9=BB=98=E8=AE=A4=E7=9A=84<code>App</code>=E7=BB=84=E4=BB=B6=EF=BC=
+=9A</p>
+<pre><code class=3D"javascript language-javascript">import Vue from 'vue'
+import ChatGPT from './ChatGPT.vue'
+
+Vue.config.productionTip =3D false
+
+new Vue({
+  render: h =3D&gt; h(ChatGPT)
+}).$mount('#app')</code></pre>
+<p>=E6=9C=80=E5=90=8E=EF=BC=8C=E5=9C=A8<code>.env</code>=E6=96=87=E4=BB=B6=
+=E4=B8=AD=EF=BC=8C=E6=B7=BB=E5=8A=A0=E4=BB=A5=E4=B8=8B=E8=A1=8C=E4=BB=A5=E8=
+=AE=BE=E7=BD=AEAPI=E5=AF=86=E9=92=A5=E5=92=8CURL:</p>
+<pre><code>VUE_APP_OPENAI_API_KEY=3Dyour_api_key_here
+VUE_APP_URL=3Dyour_url_here</code></pre>
+<p>=E8=AE=B0=E5=BE=97=E5=B0=86<code>your_api_key_here</code>=E5=92=8C<code>=
+your_url_here</code>=E5=88=86=E5=88=AB=E6=9B=B4=E6=94=B9=E4=B8=BA=E5=AE=9E=
+=E9=99=85=E7=9A=84API=E5=AF=86=E9=92=A5=E5=92=8C=E7=AB=AF=E7=82=B9=E3=80=82=
+</p>
+<p>=E7=8E=B0=E5=9C=A8=E5=8F=AF=E4=BB=A5=E8=BF=90=E8=A1=8C=E9=A1=B9=E7=9B=AE=
+=EF=BC=8C=E4=BD=BF=E7=94=A8=E4=BB=A5=E4=B8=8B=E5=91=BD=E4=BB=A4=E8=BF=90=E8=
+=A1=8C=E5=BC=80=E5=8F=91=E6=9C=8D=E5=8A=A1=E5=99=A8=EF=BC=9A</p>
+<pre><code>npm run serve</code></pre>
+<p>=E6=89=93=E5=BC=80=E6=B5=8F=E8=A7=88=E5=99=A8=E8=AE=BF=E9=97=AEhttp://lo=
+calhost:8080=EF=BC=8C=E6=82=A8=E5=B0=86=E7=9C=8B=E5=88=B0=E4=B8=8EGPT-3=E8=
+=81=8A=E5=A4=A9=E7=9A=84=E7=BB=84=E4=BB=B6=E3=80=82</p></div></div><!----><=
+form data-v-55add57a=3D"" class=3D"input-container"><textarea data-v-55add5=
+7a=3D"" placeholder=3D"=E8=BE=93=E5=85=A5=E4=BD=A0=E7=9A=84=E6=B6=88=E6=81=
+=AF..."></textarea><button data-v-55add57a=3D"" type=3D"submit">=E5=8F=91=
+=E9=80=81</button><button data-v-55add57a=3D"">Clear</button></form></div><=
+/div></body></html>
+------MultipartBoundary--fHiG4Ng3vNEBDZsRsErYzY5XjnP5fHMEorpOAPw7LI----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://purple-ground-0d1b27f00.3.azurestaticapps.net/css/app.6f77c90e.css
+
+@charset "utf-8";
+
+.loading-spinner[data-v-55add57a] { border-width: 4px; border-style: solid;=
+ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgb=
+(0, 153, 255); border-image: initial; width: 20px; height: 20px; border-rad=
+ius: 50%; animation: 1s linear 0s infinite normal none running spin-55add57=
+a; }
+
+@keyframes spin-55add57a {=20
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1turn); }
+}
+
+body[data-v-55add57a] { margin: 0px; }
+
+.header[data-v-55add57a] { background-color: rgb(245, 245, 245); padding: 1=
+0px; text-align: center; font-size: 20px; color: rgb(51, 51, 51); }
+
+.chat-container[data-v-55add57a] { padding: 10px; align-items: center; }
+
+.assistant[data-v-55add57a] { background-color: rgb(228, 225, 225); padding=
+: 1px 1px 1px 10px; }
+
+.user[data-v-55add57a] { padding-left: 10px; }
+
+.input-container[data-v-55add57a] { position: absolute; top: 90%; width: 90=
+%; display: flex; padding: 5px; }
+
+.input-container textarea[data-v-55add57a] { flex-grow: 1; height: 2rem; ma=
+rgin-right: 5px; width: 70%; }
+
+.chat-history[data-v-55add57a] { max-height: calc(100vh - 18rem); padding: =
+1.5rem 0px; overflow-y: scroll; }
+
+pre[data-v-55add57a] { white-space: pre-wrap; overflow-wrap: break-word; }
+------MultipartBoundary--fHiG4Ng3vNEBDZsRsErYzY5XjnP5fHMEorpOAPw7LI------

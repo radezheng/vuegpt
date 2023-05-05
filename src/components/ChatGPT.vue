@@ -1,11 +1,11 @@
 <template>
-  <div class="header">欢迎使用Azure OpenAI - GPT4</div>
+  <div class="header">{{title}}</div>
   <div class="chat-container">
     <div class="chat-history" ref="chatHistory">
       <vue-showdown
         v-for="(message, index) in messages"
         :key="index"
-        :markdown="'**' + message.role + '**: ' + message.content"
+        :markdown="'**' + message.role.toUpperCase() + '**: ' + message.content"
         flavor="github"
         extension="table,footnote"
         :class="message.role"
@@ -48,16 +48,31 @@ export default {
       messages: [],
       contextMaxLength: 5,
       loading: false,
+      title: process.env.VUE_APP_TITLE ? process.env.VUE_APP_TITLE : '欢迎使用Azure OpenAI - GPT4',
     };
   },
+
+  mounted() {
+      console.log("mounted");
+      this.addMessage({ role: "assistant", content: "您好, 您正在与Azure OpenAI聊天，如果想保留聊天内容，可以按Ctrl + S来保存哦。" });
+    },
   methods: {
+    
+
     clearMessage() {
       this.messages = [];
     },
 
+    addMessage(msg){
+      if(msg && msg.content)
+        this.messages.push(msg);
+      else
+        console.log(msg);
+    },
+
     sendMessage() {
       if (this.inputMessage.trim()) {
-        this.messages.push({ role: "user", content: this.inputMessage });
+        this.addMessage({ role: "user", content: this.inputMessage });
         
         let msgtosend = [];
         for (
@@ -113,22 +128,22 @@ export default {
 
             //delete last message from messages
             if (this.streaming) this.messages.pop();
-            this.messages.push(newmsg);
+            this.addMessage(newmsg);
             this.streaming = true;
           } else if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
               this.loading = false;
               this.streaming = false;
             } else {
-              console.error(xhr.statusText);
+              console.error(xhr.statusText,xhr.response);
               this.loading = false;
-              if (xhr.response.data.error) {
-                this.messages.unshift({
+              if (xhr.response.error) {
+                this.addMessage({
                   role: "assistant",
-                  content: xhr.response.data.error.message,
+                  content: xhr.response,
                 });
               } else {
-                this.messages.push({
+                this.addMessage({
                   role: "assistant",
                   content: xhr.response,
                 });
@@ -137,6 +152,10 @@ export default {
           }
           this.scrollToBottom();
 
+        };
+
+        xhr.onerror = () => {
+          console.error("Request failed due to a network error",xhr.response);
         };
 
         xhr.send(

@@ -3,11 +3,13 @@ node_modules
 /dist
 test.sh
 **/*/*copy*
+*copy*
 *-lock.json
 
 # local env files
 .env.local
 .env.*.local
+*.local
 
 # Log files
 npm-debug.log*
