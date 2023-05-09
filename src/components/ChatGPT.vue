@@ -160,11 +160,11 @@ export default {
 
         xhr.send(
           JSON.stringify({
-            messages: this.messages,
+            messages: this.msgtosend,
             max_tokens: 2000,
             n: 1,
             stop: null,
-            temperature: 0.9,
+            temperature: 0.5,
             stream: true,
           })
         );
