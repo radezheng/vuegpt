@@ -46,6 +46,7 @@ export default {
     return {
       inputMessage: "",
       messages: [],
+      msgtosend: [],
       contextMaxLength: 5,
       loading: false,
       title: process.env.VUE_APP_TITLE ? process.env.VUE_APP_TITLE : '欢迎使用Azure OpenAI - GPT4',
@@ -53,7 +54,6 @@ export default {
   },
 
   mounted() {
-      console.log("mounted");
       this.addMessage({ role: "assistant", content: "您好, 您正在与Azure OpenAI聊天，如果想保留聊天内容，可以按Ctrl + S来保存哦。" });
     },
   methods: {
@@ -74,16 +74,16 @@ export default {
       if (this.inputMessage.trim()) {
         this.addMessage({ role: "user", content: this.inputMessage });
         
-        let msgtosend = [];
+        this.msgtosend = [];
         for (
           let i = Math.max(0, this.messages.length - this.contextMaxLength);
           i < this.messages.length;
           i++
         ) {
-          msgtosend.push(this.messages[i]);
+          this.msgtosend.push(this.messages[i]);
         }
 
-        msgtosend.unshift(dataground);
+        this.msgtosend.unshift(dataground);
 
         if (this.eventSource) {
           this.eventSource.close();
@@ -135,7 +135,8 @@ export default {
               this.loading = false;
               this.streaming = false;
             } else {
-              console.error(xhr.statusText,xhr.response);
+              console.error(xhr.statusText);
+              console.error(xhr.response);
               this.loading = false;
               if (xhr.response.error) {
                 this.addMessage({
